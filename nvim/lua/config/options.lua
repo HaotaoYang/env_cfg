@@ -33,3 +33,6 @@ opt.smartcase = true
 -- 外观
 opt.termguicolors = true
 opt.signcolumn = "yes"
+
+-- 关闭自动格式化代码
+vim.g.autoformat = false
