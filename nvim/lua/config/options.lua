@@ -36,3 +36,15 @@ opt.signcolumn = "yes"
 
 -- 关闭自动格式化代码
 vim.g.autoformat = false
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "*",
+    callback = function()
+        vim.bo.expandtab = true
+        vim.bo.tabstop = 4
+        vim.bo.shiftwidth = 4
+        vim.bo.softtabstop = 4
+    end
+})
+
+vim.cmd [[ autocmd FileType * setlocal expandtab ]]
