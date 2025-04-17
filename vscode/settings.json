@@ -1,0 +1,127 @@
+{
+    "remote.SSH.remotePlatform": {
+        "rocky8-dev": "linux"
+    },
+    "editor.codeActionsOnSave": {
+        
+    },
+    "editor.dropIntoEditor.preferences": [
+
+    ],
+
+    /*
+    ===========================================================================================
+    ************************************** 需要安装的插件 **************************************
+    1、基本配置插件
+        - Vim
+        - Which Key
+
+    2、远程开发插件
+        - Remote Development
+        - Remote-SSH
+        - Dev Containers
+    ===========================================================================================
+    */
+
+    // 基础设置
+    "editor.cursorSurroundingLines": 10,              // 光标上下保留的行数
+    "editor.cursorSurroundingLinesStyle": "default",  // 或 "all"（更接近 Vim 行为） 
+    "editor.lineNumbers": "on",                       // 显示行号（绝对行号）
+    "workbench.colorCustomizations": {
+        "editorLineNumber.foreground": "#666666",       // 相对行号颜色
+        "editorLineNumber.activeForeground": "#ffcc00"  // 当前行绝对行号颜色
+    },
+    // 通用缩进设置
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false, // 禁止自动检测（强制使用4空格）
+
+    // vim setting
+    "vim.easymotion": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.smartRelativeLine": true,
+    "vim.leader": "<space>",
+
+    // 单行上下移动
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<C-j>"],
+            "commands": ["editor.action.moveLinesDownAction"]
+        },
+        {
+            "before": ["<C-k>"],
+            "commands": ["editor.action.moveLinesUpAction"]
+        },
+        {
+            "before": ["<leader>", "l"],
+            "commands": ["workbench.action.focusFirstEditorGroup"]
+        },
+        {
+            "before": ["<leader>", "h"],
+            "commands": ["workbench.view.explorer"]
+        },
+        {
+            "before": ["H"],
+            "commands": ["workbench.action.previousEditor"]
+        },
+        {
+            "before": ["L"],
+            "commands": ["workbench.action.nextEditor"]
+        },
+
+        // ===== Code & Close =====
+        {
+            "before": ["<leader>", "c", "a"],
+            "commands": ["workbench.action.closeAllEditors"]
+        },
+        {
+            "before": ["<leader>", "c", "d"],
+            "commands": ["workbench.action.closeActiveEditor"]
+        },
+
+        // ===== Find & Format =====
+        {
+            "before": ["<leader>", "f", "f"],
+            "commands": ["workbench.action.quickOpen"] // 查找文件
+        },
+        {
+            "before": ["<leader>", "f", "l"],
+            "commands": ["workbench.files.action.showActiveFileInExplorer"] // 定位文件位置
+        },
+        {
+            "before": ["<leader>", "f", "s"],
+            "commands": ["workbench.action.findInFiles"] // 查找字符
+        },
+        {
+            "before": ["<leader>", "f", "c"],
+            "commands": ["workbench.action.showCommands"] // 打开查找菜单
+        }
+    ],
+
+    // 多行上下移动
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<C-j>"],
+            "commands": ["editor.action.moveLinesDownAction"]
+        },
+        {
+            "before": ["<C-k>"],
+            "commands": ["editor.action.moveLinesUpAction"]
+        }
+    ],
+    
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-f>": false,
+        "<C-w>": true
+    },
+
+    // To improve performance
+    "extensions.experimental.affinity": {
+      "vscodevim.vim": 1
+    }
+
+}
